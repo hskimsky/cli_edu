@@ -3,7 +3,7 @@ import typer
 
 
 def get_s3_client():
-    ### 차후 configure을 통한 credentials로 대체
+    # TODO 차후 configure을 통한 credentials로 대체
     try:
         session = boto3.Session(
             aws_access_key_id="xxx",
