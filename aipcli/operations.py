@@ -1,18 +1,20 @@
 import boto3
 import typer
 
+
 def get_s3_client():
     ### 차후 configure을 통한 credentials로 대체
     try:
         session = boto3.Session(
-        aws_access_key_id = "xxx",
-        aws_secret_access_key = "xxx"
-)
+            aws_access_key_id="xxx",
+            aws_secret_access_key="xxx"
+        )
         s3_client = session.client('s3')
         return s3_client
     except Exception as e:
         typer.echo(e)
         raise typer.Exit(code=1)
+
 
 def list_buckets():
     """
